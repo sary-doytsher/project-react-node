@@ -81,15 +81,17 @@ git push -u origin main
 
 **Build Command:** 
 ```
-npm install
+cd server && npm install
 ```
 
 **Start Command:** 
 ```
-npm start
+cd server && npm start
 ```
 
 **Free Plan:** בחר כדי לשמור על עלויות אפס
+
+⚠️ **חשוב:** אם אתה משתמש בmono-repo (Repository עם Frontend ו-Backend ביחד), חייב להוסיף `cd server &&` בתחילת כל command!
 
 ### 2.4 Environment Variables
 1. גלול למטה ל**"Environment"**
