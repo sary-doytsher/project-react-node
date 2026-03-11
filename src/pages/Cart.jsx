@@ -17,6 +17,7 @@ import {
 } from '@mui/material'
 import { Add, Remove, Delete, ShoppingCartCheckout, ArrowBack } from '@mui/icons-material'
 import { increaseQuantity, decreaseQuantity, removeFromCart, clearCart } from '../features/cart/cartSlice'
+import { decreaseStock } from '../features/products/productsSlice'
 
 const Cart = () => {
   const dispatch = useDispatch()
@@ -42,12 +43,13 @@ const Cart = () => {
   const handleCheckout = () => {
     if (!currentUser) {
       alert('יש להתחבר כדי לבצע הזמנה')
-      navigate('/login')
+      navigate('/login', { state: { from: '/cart' } })
       return
     }
 
     if (window.confirm('האם אתה בטוח שברצונך לבצע את ההזמנה?')) {
-      // כאן תוכל להוסיף קריאה לשרת לשמירת ההזמנה
+      // הורד מלאי לכל מוצר בסל
+      dispatch(decreaseStock(items.map(item => ({ _id: item._id, quantity: item.quantity }))))
       alert('ההזמנה בוצעה בהצלחה!')
       dispatch(clearCart())
       navigate('/products')

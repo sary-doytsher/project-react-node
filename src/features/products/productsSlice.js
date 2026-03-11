@@ -33,8 +33,17 @@ const productsSlice = createSlice({
     deleteProduct: (state, action) => {
       state.products = state.products.filter(p => p._id !== action.payload)
     },
+    decreaseStock: (state, action) => {
+      // action.payload = [{ _id, quantity }, ...]
+      action.payload.forEach(({ _id, quantity }) => {
+        const product = state.products.find(p => p._id === _id)
+        if (product) {
+          product.stock = Math.max(0, product.stock - quantity)
+        }
+      })
+    },
   },
 })
 
-export const { setProducts, setLoading, setError, addProduct, updateProduct, deleteProduct } = productsSlice.actions
+export const { setProducts, setLoading, setError, addProduct, updateProduct, deleteProduct, decreaseStock } = productsSlice.actions
 export default productsSlice.reducer

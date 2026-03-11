@@ -162,6 +162,15 @@ app.put('/api/users/:id', (req, res) => {
 app.post('/api/orders', (req, res) => {
   try {
     const newOrder = db.orders.create(req.body);
+    // הורד מלאי לכל מוצר בהזמנה
+    if (req.body.items && Array.isArray(req.body.items)) {
+      req.body.items.forEach(({ _id, quantity }) => {
+        const product = db.products.getById(_id)
+        if (product) {
+          db.products.update(_id, { stock: Math.max(0, product.stock - quantity) })
+        }
+      })
+    }
     res.status(201).json(newOrder);
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message });

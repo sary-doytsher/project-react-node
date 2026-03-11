@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate, useLocation, Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import {
   Container,
@@ -18,6 +18,8 @@ import { setUser } from '../features/user/userSlice'
 const Login = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.from || '/products'
   const [error, setError] = useState('')
   const {
     register,
@@ -30,7 +32,7 @@ const Login = () => {
     try {
       const user = await userService.login(data)
       dispatch(setUser(user))
-      navigate('/products')
+      navigate(from)
     } catch (err) {
       setError(err.message || 'שגיאה בהתחברות. אנא בדוק את הפרטים שהזנת.')
     }
