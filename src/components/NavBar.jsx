@@ -76,8 +76,8 @@ const NavBar = () => {
                 textTransform: 'none',
                 fontSize: '1rem',
                 fontWeight: 600,
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                border: '2px solid transparent',
+                backgroundColor: 'rgba(102, 126, 234, 0.3)',
+                border: '2px solid #667eea',
                 borderRadius: '8px',
                 padding: '8px 16px',
                 transition: 'all 0.3s ease',
@@ -85,6 +85,7 @@ const NavBar = () => {
                   backgroundColor: '#667eea',
                   borderColor: '#667eea',
                   transform: 'translateY(-2px)',
+                  boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)',
                 },
               }}
               startIcon={<Store />}
@@ -98,8 +99,8 @@ const NavBar = () => {
                 textTransform: 'none',
                 fontSize: '1rem',
                 fontWeight: 600,
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                border: '2px solid transparent',
+                backgroundColor: 'rgba(102, 126, 234, 0.3)',
+                border: '2px solid #667eea',
                 borderRadius: '8px',
                 padding: '8px 16px',
                 transition: 'all 0.3s ease',
@@ -107,6 +108,7 @@ const NavBar = () => {
                   backgroundColor: '#667eea',
                   borderColor: '#667eea',
                   transform: 'translateY(-2px)',
+                  boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)',
                 },
               }}
               startIcon={<Login />}
@@ -120,8 +122,8 @@ const NavBar = () => {
                 textTransform: 'none',
                 fontSize: '1rem',
                 fontWeight: 600,
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                border: '2px solid transparent',
+                backgroundColor: 'rgba(102, 126, 234, 0.3)',
+                border: '2px solid #667eea',
                 borderRadius: '8px',
                 padding: '8px 16px',
                 transition: 'all 0.3s ease',
@@ -129,6 +131,7 @@ const NavBar = () => {
                   backgroundColor: '#667eea',
                   borderColor: '#667eea',
                   transform: 'translateY(-2px)',
+                  boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)',
                 },
               }}
               startIcon={<PersonAdd />}
@@ -146,8 +149,8 @@ const NavBar = () => {
                 textTransform: 'none',
                 fontSize: '1rem',
                 fontWeight: 600,
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                border: '2px solid transparent',
+                backgroundColor: 'rgba(102, 126, 234, 0.3)',
+                border: '2px solid #667eea',
                 borderRadius: '8px',
                 padding: '8px 16px',
                 transition: 'all 0.3s ease',
@@ -155,6 +158,7 @@ const NavBar = () => {
                   backgroundColor: '#667eea',
                   borderColor: '#667eea',
                   transform: 'translateY(-2px)',
+                  boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)',
                 },
               }}
               startIcon={<Store />}
@@ -168,8 +172,8 @@ const NavBar = () => {
                 textTransform: 'none',
                 fontSize: '1rem',
                 fontWeight: 600,
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                border: '2px solid transparent',
+                backgroundColor: 'rgba(102, 126, 234, 0.3)',
+                border: '2px solid #667eea',
                 borderRadius: '8px',
                 padding: '8px 16px',
                 transition: 'all 0.3s ease',
@@ -177,6 +181,7 @@ const NavBar = () => {
                   backgroundColor: '#667eea',
                   borderColor: '#667eea',
                   transform: 'translateY(-2px)',
+                  boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)',
                 },
               }}
               startIcon={<Add />}
@@ -190,8 +195,8 @@ const NavBar = () => {
                 textTransform: 'none',
                 fontSize: '1rem',
                 fontWeight: 600,
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                border: '2px solid transparent',
+                backgroundColor: 'rgba(255, 107, 107, 0.3)',
+                border: '2px solid #ff6b6b',
                 borderRadius: '8px',
                 padding: '8px 16px',
                 transition: 'all 0.3s ease',
@@ -199,6 +204,7 @@ const NavBar = () => {
                   backgroundColor: '#ff6b6b',
                   borderColor: '#ff6b6b',
                   transform: 'translateY(-2px)',
+                  boxShadow: '0 4px 12px rgba(255, 107, 107, 0.4)',
                 },
               }}
               startIcon={<Logout />}
@@ -216,8 +222,8 @@ const NavBar = () => {
                 textTransform: 'none',
                 fontSize: '1rem',
                 fontWeight: 600,
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                border: '2px solid transparent',
+                backgroundColor: 'rgba(102, 126, 234, 0.3)',
+                border: '2px solid #667eea',
                 borderRadius: '8px',
                 padding: '8px 16px',
                 transition: 'all 0.3s ease',
@@ -225,6 +231,7 @@ const NavBar = () => {
                   backgroundColor: '#667eea',
                   borderColor: '#667eea',
                   transform: 'translateY(-2px)',
+                  boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)',
                 },
               }}
               startIcon={<Store />}
@@ -238,8 +245,8 @@ const NavBar = () => {
                 textTransform: 'none',
                 fontSize: '1rem',
                 fontWeight: 600,
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                border: '2px solid transparent',
+                backgroundColor: 'rgba(255, 107, 107, 0.3)',
+                border: '2px solid #ff6b6b',
                 borderRadius: '8px',
                 padding: '8px 16px',
                 transition: 'all 0.3s ease',
@@ -247,6 +254,7 @@ const NavBar = () => {
                   backgroundColor: '#ff6b6b',
                   borderColor: '#ff6b6b',
                   transform: 'translateY(-2px)',
+                  boxShadow: '0 4px 12px rgba(255, 107, 107, 0.4)',
                 },
               }}
               startIcon={<Logout />}
@@ -263,13 +271,15 @@ const NavBar = () => {
           sx={{ 
             ml: 2,
             color: '#ffffff',
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            border: '2px solid transparent',
+            backgroundColor: 'rgba(102, 126, 234, 0.3)',
+            border: '2px solid #667eea',
+            borderRadius: '8px',
             transition: 'all 0.3s ease',
             '&:hover': {
               backgroundColor: '#667eea',
               borderColor: '#667eea',
               transform: 'translateY(-2px)',
+              boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)',
             },
           }}
         >
