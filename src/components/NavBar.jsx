@@ -29,8 +29,8 @@ const NavBar = () => {
     <AppBar 
       position="sticky"
       sx={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        boxShadow: '0 4px 20px rgba(102, 126, 234, 0.3)',
+        background: '#1a1a2e',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
       }}
     >
       <Toolbar sx={{ minHeight: 70 }}>
@@ -43,8 +43,8 @@ const NavBar = () => {
             mr: 4,
             fontWeight: 'bold',
             fontSize: '1.5rem',
-            color: 'white',
-            textShadow: '0 2px 4px rgba(0,0,0,0.2)',
+            color: '#ffffff',
+            textShadow: '0 2px 4px rgba(0,0,0,0.3)',
           }}
           onClick={() => navigate('/products')}
         >
@@ -56,7 +56,7 @@ const NavBar = () => {
           variant="body1" 
           sx={{ 
             mr: 2,
-            color: 'rgba(255, 255, 255, 0.9)',
+            color: '#ffffff',
             fontWeight: 500,
             fontSize: '1rem',
           }}
@@ -72,13 +72,19 @@ const NavBar = () => {
           <>
             <Button
               sx={{
-                color: 'white',
+                color: '#ffffff',
                 textTransform: 'none',
                 fontSize: '1rem',
-                fontWeight: 500,
+                fontWeight: 600,
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                border: '2px solid transparent',
+                borderRadius: '8px',
+                padding: '8px 16px',
+                transition: 'all 0.3s ease',
                 '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                  borderRadius: '8px',
+                  backgroundColor: '#667eea',
+                  borderColor: '#667eea',
+                  transform: 'translateY(-2px)',
                 },
               }}
               startIcon={<Store />}
@@ -88,13 +94,19 @@ const NavBar = () => {
             </Button>
             <Button
               sx={{
-                color: 'white',
+                color: '#ffffff',
                 textTransform: 'none',
                 fontSize: '1rem',
-                fontWeight: 500,
+                fontWeight: 600,
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                border: '2px solid transparent',
+                borderRadius: '8px',
+                padding: '8px 16px',
+                transition: 'all 0.3s ease',
                 '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                  borderRadius: '8px',
+                  backgroundColor: '#667eea',
+                  borderColor: '#667eea',
+                  transform: 'translateY(-2px)',
                 },
               }}
               startIcon={<Login />}
@@ -104,13 +116,19 @@ const NavBar = () => {
             </Button>
             <Button
               sx={{
-                color: 'white',
+                color: '#ffffff',
                 textTransform: 'none',
                 fontSize: '1rem',
-                fontWeight: 500,
+                fontWeight: 600,
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                border: '2px solid transparent',
+                borderRadius: '8px',
+                padding: '8px 16px',
+                transition: 'all 0.3s ease',
                 '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                  borderRadius: '8px',
+                  backgroundColor: '#667eea',
+                  borderColor: '#667eea',
+                  transform: 'translateY(-2px)',
                 },
               }}
               startIcon={<PersonAdd />}
@@ -124,13 +142,19 @@ const NavBar = () => {
           <>
             <Button
               sx={{
-                color: 'white',
+                color: '#ffffff',
                 textTransform: 'none',
                 fontSize: '1rem',
-                fontWeight: 500,
+                fontWeight: 600,
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                border: '2px solid transparent',
+                borderRadius: '8px',
+                padding: '8px 16px',
+                transition: 'all 0.3s ease',
                 '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                  borderRadius: '8px',
+                  backgroundColor: '#667eea',
+                  borderColor: '#667eea',
+                  transform: 'translateY(-2px)',
                 },
               }}
               startIcon={<Store />}
@@ -140,13 +164,19 @@ const NavBar = () => {
             </Button>
             <Button
               sx={{
-                color: 'white',
+                color: '#ffffff',
                 textTransform: 'none',
                 fontSize: '1rem',
-                fontWeight: 500,
+                fontWeight: 600,
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                border: '2px solid transparent',
+                borderRadius: '8px',
+                padding: '8px 16px',
+                transition: 'all 0.3s ease',
                 '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                  borderRadius: '8px',
+                  backgroundColor: '#667eea',
+                  borderColor: '#667eea',
+                  transform: 'translateY(-2px)',
                 },
               }}
               startIcon={<Add />}
@@ -156,13 +186,19 @@ const NavBar = () => {
             </Button>
             <Button
               sx={{
-                color: 'white',
+                color: '#ffffff',
                 textTransform: 'none',
                 fontSize: '1rem',
-                fontWeight: 500,
+                fontWeight: 600,
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                border: '2px solid transparent',
+                borderRadius: '8px',
+                padding: '8px 16px',
+                transition: 'all 0.3s ease',
                 '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                  borderRadius: '8px',
+                  backgroundColor: '#ff6b6b',
+                  borderColor: '#ff6b6b',
+                  transform: 'translateY(-2px)',
                 },
               }}
               startIcon={<Logout />}
@@ -176,13 +212,19 @@ const NavBar = () => {
           <>
             <Button
               sx={{
-                color: 'white',
+                color: '#ffffff',
                 textTransform: 'none',
                 fontSize: '1rem',
-                fontWeight: 500,
+                fontWeight: 600,
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                border: '2px solid transparent',
+                borderRadius: '8px',
+                padding: '8px 16px',
+                transition: 'all 0.3s ease',
                 '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                  borderRadius: '8px',
+                  backgroundColor: '#667eea',
+                  borderColor: '#667eea',
+                  transform: 'translateY(-2px)',
                 },
               }}
               startIcon={<Store />}
@@ -192,13 +234,19 @@ const NavBar = () => {
             </Button>
             <Button
               sx={{
-                color: 'white',
+                color: '#ffffff',
                 textTransform: 'none',
                 fontSize: '1rem',
-                fontWeight: 500,
+                fontWeight: 600,
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                border: '2px solid transparent',
+                borderRadius: '8px',
+                padding: '8px 16px',
+                transition: 'all 0.3s ease',
                 '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                  borderRadius: '8px',
+                  backgroundColor: '#ff6b6b',
+                  borderColor: '#ff6b6b',
+                  transform: 'translateY(-2px)',
                 },
               }}
               startIcon={<Logout />}
@@ -214,10 +262,14 @@ const NavBar = () => {
           onClick={() => navigate('/cart')}
           sx={{ 
             ml: 2,
-            color: 'white',
+            color: '#ffffff',
+            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            border: '2px solid transparent',
+            transition: 'all 0.3s ease',
             '&:hover': {
-              backgroundColor: 'rgba(255, 255, 255, 0.2)',
-              borderRadius: '8px',
+              backgroundColor: '#667eea',
+              borderColor: '#667eea',
+              transform: 'translateY(-2px)',
             },
           }}
         >
