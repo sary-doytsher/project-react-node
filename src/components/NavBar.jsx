@@ -26,19 +26,41 @@ const NavBar = () => {
   }
 
   return (
-    <AppBar position="sticky">
-      <Toolbar>
+    <AppBar 
+      position="sticky"
+      sx={{
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        boxShadow: '0 4px 20px rgba(102, 126, 234, 0.3)',
+      }}
+    >
+      <Toolbar sx={{ minHeight: 70 }}>
         <Typography
           variant="h6"
           component="div"
-          sx={{ flexGrow: 0, cursor: 'pointer', mr: 4 }}
+          sx={{ 
+            flexGrow: 0, 
+            cursor: 'pointer', 
+            mr: 4,
+            fontWeight: 'bold',
+            fontSize: '1.5rem',
+            color: 'white',
+            textShadow: '0 2px 4px rgba(0,0,0,0.2)',
+          }}
           onClick={() => navigate('/products')}
         >
           חנות אונליין
         </Typography>
 
         {/* שם המשתמש */}
-        <Typography variant="body1" sx={{ mr: 2 }}>
+        <Typography 
+          variant="body1" 
+          sx={{ 
+            mr: 2,
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontWeight: 500,
+            fontSize: '1rem',
+          }}
+        >
           שלום, {currentUser ? currentUser.name : 'אורח'}
         </Typography>
 
@@ -49,21 +71,48 @@ const NavBar = () => {
           // אורח
           <>
             <Button
-              color="inherit"
+              sx={{
+                color: 'white',
+                textTransform: 'none',
+                fontSize: '1rem',
+                fontWeight: 500,
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  borderRadius: '8px',
+                },
+              }}
               startIcon={<Store />}
               onClick={() => navigate('/products')}
             >
               כל המוצרים
             </Button>
             <Button
-              color="inherit"
+              sx={{
+                color: 'white',
+                textTransform: 'none',
+                fontSize: '1rem',
+                fontWeight: 500,
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  borderRadius: '8px',
+                },
+              }}
               startIcon={<Login />}
               onClick={() => navigate('/login')}
             >
               כניסה
             </Button>
             <Button
-              color="inherit"
+              sx={{
+                color: 'white',
+                textTransform: 'none',
+                fontSize: '1rem',
+                fontWeight: 500,
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  borderRadius: '8px',
+                },
+              }}
               startIcon={<PersonAdd />}
               onClick={() => navigate('/signup')}
             >
@@ -74,21 +123,48 @@ const NavBar = () => {
           // מנהל
           <>
             <Button
-              color="inherit"
+              sx={{
+                color: 'white',
+                textTransform: 'none',
+                fontSize: '1rem',
+                fontWeight: 500,
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  borderRadius: '8px',
+                },
+              }}
               startIcon={<Store />}
               onClick={() => navigate('/products')}
             >
               כל המוצרים
             </Button>
             <Button
-              color="inherit"
+              sx={{
+                color: 'white',
+                textTransform: 'none',
+                fontSize: '1rem',
+                fontWeight: 500,
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  borderRadius: '8px',
+                },
+              }}
               startIcon={<Add />}
               onClick={() => navigate('/add-product')}
             >
               הוסף מוצר
             </Button>
             <Button
-              color="inherit"
+              sx={{
+                color: 'white',
+                textTransform: 'none',
+                fontSize: '1rem',
+                fontWeight: 500,
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  borderRadius: '8px',
+                },
+              }}
               startIcon={<Logout />}
               onClick={handleLogout}
             >
@@ -99,14 +175,32 @@ const NavBar = () => {
           // משתמש רגיל
           <>
             <Button
-              color="inherit"
+              sx={{
+                color: 'white',
+                textTransform: 'none',
+                fontSize: '1rem',
+                fontWeight: 500,
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  borderRadius: '8px',
+                },
+              }}
               startIcon={<Store />}
               onClick={() => navigate('/products')}
             >
               כל המוצרים
             </Button>
             <Button
-              color="inherit"
+              sx={{
+                color: 'white',
+                textTransform: 'none',
+                fontSize: '1rem',
+                fontWeight: 500,
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  borderRadius: '8px',
+                },
+              }}
               startIcon={<Logout />}
               onClick={handleLogout}
             >
@@ -117,12 +211,25 @@ const NavBar = () => {
 
         {/* סל קניות */}
         <IconButton
-          color="inherit"
           onClick={() => navigate('/cart')}
-          sx={{ ml: 2 }}
+          sx={{ 
+            ml: 2,
+            color: 'white',
+            '&:hover': {
+              backgroundColor: 'rgba(255, 255, 255, 0.2)',
+              borderRadius: '8px',
+            },
+          }}
         >
-          <Badge badgeContent={cartItemsCount} color="error">
-            <ShoppingCart />
+          <Badge badgeContent={cartItemsCount} color="error" sx={{ 
+            '& .MuiBadge-badge': {
+              backgroundColor: '#ff4081',
+              color: 'white',
+              fontWeight: 'bold',
+              fontSize: '0.75rem',
+            }
+          }}>
+            <ShoppingCart sx={{ fontSize: '1.5rem' }} />
           </Badge>
         </IconButton>
       </Toolbar>
