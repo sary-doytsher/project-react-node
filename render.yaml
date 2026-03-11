@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: react-shop-server
+    runtime: node
+    region: frankfurt
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
