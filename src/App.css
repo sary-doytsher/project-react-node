@@ -1,0 +1,105 @@
+.App {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8f9ff 0%, #fff5f7 100%);
+}
+
+/* AppBar Enhancement */
+.MuiAppBar-root {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Button Enhancements */
+.MuiButton-contained {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-weight: 600;
+}
+
+.MuiButton-contained:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+}
+
+.MuiButton-outlined {
+  border-color: rgba(102, 126, 234, 0.5) !important;
+  color: #667eea !important;
+  transition: all 0.3s ease !important;
+}
+
+.MuiButton-outlined:hover {
+  border-color: #667eea !important;
+  background: rgba(102, 126, 234, 0.05) !important;
+}
+
+/* Card Enhancements */
+.MuiCard-root {
+  border-radius: 16px !important;
+  border: 1px solid rgba(102, 126, 234, 0.1) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.MuiCard-root:hover {
+  box-shadow: 0 12px 32px rgba(102, 126, 234, 0.2) !important;
+  border-color: rgba(102, 126, 234, 0.3) !important;
+}
+
+/* TextField Enhancements */
+.MuiTextField-root .MuiOutlinedInput-root {
+  transition: all 0.3s ease !important;
+  border-radius: 12px !important;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover fieldset {
+  border-color: rgba(102, 126, 234, 0.3) !important;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #667eea !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Alert Enhancements */
+.MuiAlert-root {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+.MuiAlert-standardSuccess {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(76, 175, 80, 0.05)) !important;
+  border-left: 4px solid #4caf50 !important;
+}
+
+.MuiAlert-standardError {
+  background: linear-gradient(135deg, rgba(244, 67, 54, 0.1), rgba(244, 67, 54, 0.05)) !important;
+  border-left: 4px solid #f44336 !important;
+}
+
+/* Badge Enhancement */
+.MuiBadge-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4) !important;
+  font-weight: 700;
+}
+
+/* Paper Enhancement */
+.MuiPaper-root {
+  background: white !important;
+  border-radius: 16px !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Table Enhancement */
+.MuiTableCell-head {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+.MuiTableRow-root:hover {
+  background: rgba(102, 126, 234, 0.05) !important;
+}
