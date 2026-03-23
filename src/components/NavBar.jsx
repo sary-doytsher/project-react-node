@@ -9,8 +9,9 @@ import {
   Badge,
   IconButton,
 } from '@mui/material'
-import { ShoppingCart, Logout, Login, PersonAdd, Add, Store } from '@mui/icons-material'
+import { ShoppingCart, Logout, Login, PersonAdd, Add, Store, ListAlt } from '@mui/icons-material'
 import { logout } from '../features/user/userSlice'
+import { setCartUser } from '../features/cart/cartSlice'
 
 const NavBar = () => {
   const dispatch = useDispatch()
@@ -21,6 +22,7 @@ const NavBar = () => {
   const cartItemsCount = items.reduce((sum, item) => sum + item.quantity, 0)
 
   const handleLogout = () => {
+    dispatch(setCartUser(null))
     dispatch(logout())
     navigate('/products')
   }
@@ -149,6 +151,30 @@ const NavBar = () => {
                 textTransform: 'none',
                 fontSize: '1rem',
                 fontWeight: 600,
+                backgroundColor: 'rgba(255, 179, 71, 0.3)',
+                border: '2px solid #ffb347',
+                borderRadius: '8px',
+                padding: '8px 16px',
+                transition: 'all 0.3s ease',
+                mr: 1,
+                '&:hover': {
+                  backgroundColor: '#ffb347',
+                  borderColor: '#ffb347',
+                  transform: 'translateY(-2px)',
+                  boxShadow: '0 4px 12px rgba(255, 179, 71, 0.4)',
+                },
+              }}
+              startIcon={<ListAlt />}
+              onClick={() => navigate('/admin')}
+            >
+              לוח בקרה
+            </Button>
+            <Button
+              sx={{
+                color: '#ffffff',
+                textTransform: 'none',
+                fontSize: '1rem',
+                fontWeight: 600,
                 backgroundColor: 'rgba(102, 126, 234, 0.3)',
                 border: '2px solid #667eea',
                 borderRadius: '8px',
@@ -238,6 +264,29 @@ const NavBar = () => {
               onClick={() => navigate('/products')}
             >
               כל המוצרים
+            </Button>
+            <Button
+              sx={{
+                color: '#ffffff',
+                textTransform: 'none',
+                fontSize: '1rem',
+                fontWeight: 600,
+                backgroundColor: 'rgba(102, 126, 234, 0.3)',
+                border: '2px solid #667eea',
+                borderRadius: '8px',
+                padding: '8px 16px',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: '#667eea',
+                  borderColor: '#667eea',
+                  transform: 'translateY(-2px)',
+                  boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)',
+                },
+              }}
+              startIcon={<ListAlt />}
+              onClick={() => navigate('/my-orders')}
+            >
+              ההזמנות שלי
             </Button>
             <Button
               sx={{

@@ -14,6 +14,7 @@ import {
 import { Login as LoginIcon } from '@mui/icons-material'
 import { userService } from '../api/userService'
 import { setUser } from '../features/user/userSlice'
+import { setCartUser } from '../features/cart/cartSlice'
 
 const Login = () => {
   const dispatch = useDispatch()
@@ -32,6 +33,7 @@ const Login = () => {
     try {
       const user = await userService.login(data)
       dispatch(setUser(user))
+      dispatch(setCartUser(user._id))
       navigate(from)
     } catch (err) {
       setError(err.message || 'שגיאה בהתחברות. אנא בדוק את הפרטים שהזנת.')

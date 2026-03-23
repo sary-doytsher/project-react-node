@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import {
   Card,
@@ -16,6 +16,10 @@ import { addToCart } from '../features/cart/cartSlice'
 const Product = ({ product, isAdmin, onDelete, onAddedToCart }) => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const cartItems = useSelector(state => state.cart.items)
+  const cartItem = cartItems.find(item => item._id === product._id)
+  const cartQuantity = cartItem ? cartItem.quantity : 0
+  const isMaxStock = product.stock !== undefined && cartQuantity >= product.stock
 
   const handleAddToCart = () => {
     dispatch(addToCart(product))
@@ -64,9 +68,9 @@ const Product = ({ product, isAdmin, onDelete, onAddedToCart }) => {
           variant="contained"
           startIcon={<ShoppingCart />}
           onClick={handleAddToCart}
-          disabled={product.stock === 0}
+          disabled={product.stock === 0 || isMaxStock}
         >
-          הוסף לסל
+          {isMaxStock ? 'מקסימום במלאי' : 'הוסף לסל'}
         </Button>
         {isAdmin && (
           <Box>

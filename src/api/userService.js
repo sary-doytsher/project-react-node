@@ -2,6 +2,7 @@ import axios from 'axios'
 
 // עדכן את ה-URL לפי השרת שלך
 const API_URL = 'http://localhost:3000/api/users'
+const ADMIN_API_URL = 'http://localhost:3000/api/admin/users'
 
 export const userService = {
   // הרשמה
@@ -38,6 +39,16 @@ export const userService = {
   updateUser: async (id, userData) => {
     try {
       const response = await axios.put(`${API_URL}/${id}`, userData)
+      return response.data
+    } catch (error) {
+      throw error.response?.data || error.message
+    }
+  },
+
+  // קבלת כל המשתמשים (admin)
+  getAllUsers: async () => {
+    try {
+      const response = await axios.get(ADMIN_API_URL)
       return response.data
     } catch (error) {
       throw error.response?.data || error.message

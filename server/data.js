@@ -99,6 +99,8 @@ let users = [
     email: 'admin@example.com',
     password: 'admin123',
     role: 'admin',
+    createdAt: new Date('2024-01-01').toISOString(),
+    lastLogin: new Date().toISOString(),
   },
   {
     _id: 'user1',
@@ -106,14 +108,38 @@ let users = [
     email: 'yossi@example.com',
     password: '123456',
     role: 'customer',
+    createdAt: new Date('2024-01-15').toISOString(),
+    lastLogin: new Date('2024-03-10').toISOString(),
   },
 ];
 
-let orders = [];
+let orders = [
+  {
+    _id: '1',
+    userId: 'user1',
+    items: [
+      { _id: '1', name: 'MacBook Pro 16', price: 12999, quantity: 1 },
+      { _id: '4', name: 'AirPods Pro', price: 999, quantity: 2 },
+    ],
+    total: 14997,
+    status: 'pending',
+    createdAt: new Date('2024-03-10T10:00:00').toISOString(),
+  },
+  {
+    _id: '2',
+    userId: 'user1',
+    items: [
+      { _id: '2', name: 'iPhone 15 Pro', price: 5499, quantity: 1 },
+    ],
+    total: 5499,
+    status: 'shipped',
+    createdAt: new Date('2024-03-08T14:30:00').toISOString(),
+  },
+];
 
 let nextProductId = 11;
 let nextUserId = 3;
-let nextOrderId = 1;
+let nextOrderId = 3;
 
 export const db = {
   products: {
@@ -147,7 +173,13 @@ export const db = {
     getById: (id) => users.find((u) => u._id === id),
     getByEmail: (email) => users.find((u) => u.email === email),
     create: (user) => {
-      const newUser = { ...user, _id: `user${nextUserId++}`, role: 'customer' };
+      const newUser = {
+        ...user,
+        _id: `user${nextUserId++}`,
+        role: 'customer',
+        createdAt: new Date().toISOString(),
+        lastLogin: new Date().toISOString(),
+      };
       users.push(newUser);
       return newUser;
     },
@@ -155,6 +187,14 @@ export const db = {
       const index = users.findIndex((u) => u._id === id);
       if (index !== -1) {
         users[index] = { ...users[index], ...userData };
+        return users[index];
+      }
+      return null;
+    },
+    updateLastLogin: (id) => {
+      const index = users.findIndex((u) => u._id === id);
+      if (index !== -1) {
+        users[index].lastLogin = new Date().toISOString();
         return users[index];
       }
       return null;
@@ -168,10 +208,19 @@ export const db = {
       const newOrder = {
         ...order,
         _id: String(nextOrderId++),
+        status: 'pending',
         createdAt: new Date().toISOString(),
       };
       orders.push(newOrder);
       return newOrder;
+    },
+    updateStatus: (id, status) => {
+      const index = orders.findIndex((o) => o._id === id);
+      if (index !== -1) {
+        orders[index].status = status;
+        return orders[index];
+      }
+      return null;
     },
   },
 };

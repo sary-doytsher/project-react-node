@@ -25,6 +25,7 @@ const ProductList = () => {
       console.log('שרת לא זמין, משתמש ב-Mock Data')
       // אם השרת לא זמין, נשתמש במוצרי דוגמה
       dispatch(setProducts(mockProducts))
+      dispatch(setLoading(false))
     }
   }
 

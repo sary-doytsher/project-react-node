@@ -14,6 +14,16 @@ export const productService = {
     }
   },
 
+  // Alias for consistency
+  getAll: async () => {
+    try {
+      const response = await axios.get(API_URL)
+      return response.data
+    } catch (error) {
+      throw error.response?.data || error.message
+    }
+  },
+
   // קבלת מוצר לפי ID
   getProductById: async (id) => {
     try {
@@ -34,6 +44,16 @@ export const productService = {
     }
   },
 
+  // Alias for consistency
+  create: async (productData) => {
+    try {
+      const response = await axios.post(API_URL, productData)
+      return response.data
+    } catch (error) {
+      throw error.response?.data || error.message
+    }
+  },
+
   // עדכון מוצר
   updateProduct: async (id, productData) => {
     try {
@@ -44,8 +64,28 @@ export const productService = {
     }
   },
 
+  // Alias for consistency
+  update: async (id, productData) => {
+    try {
+      const response = await axios.put(`${API_URL}/${id}`, productData)
+      return response.data
+    } catch (error) {
+      throw error.response?.data || error.message
+    }
+  },
+
   // מחיקת מוצר
   deleteProduct: async (id) => {
+    try {
+      const response = await axios.delete(`${API_URL}/${id}`)
+      return response.data
+    } catch (error) {
+      throw error.response?.data || error.message
+    }
+  },
+
+  // Alias for consistency
+  delete: async (id) => {
     try {
       const response = await axios.delete(`${API_URL}/${id}`)
       return response.data
